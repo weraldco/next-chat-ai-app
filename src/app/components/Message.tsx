@@ -24,13 +24,20 @@ const Message = ({ content, isUserMessage }: MessageProps) => {
 							}
 						)}
 					>
-						{isUserMessage ? <User /> : <Bot className="size-5 text-white" />}
+						{isUserMessage ? (
+							<User className="size-5" />
+						) : (
+							<Bot className="size-5 text-white" />
+						)}
 					</div>
-					<div className="flex flex-col ml-6 w-full">
-						<div className="flex items-center space-x-2">
-							<span className="text-sm font-semibold text-gray-900 dark:text-white">
+					<div className="flex  ml-6 w-full">
+						<div className="flex flex-1 flex-col items-left space-x-2">
+							<span className="text-sm font-bold text-gray-900 dark:text-white">
 								{isUserMessage ? 'You' : 'Website'}
 							</span>
+							<p className="text-sm font-normal py-2.5 text-gray-900 dark:text-white">
+								{content}
+							</p>
 						</div>
 					</div>
 				</div>
